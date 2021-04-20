@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using BlueBadgeFinal.Providers;
 using BlueBadgeFinal.Models;
+using BlueBadgeFinal.Data;
 
 namespace BlueBadgeFinal
 {
