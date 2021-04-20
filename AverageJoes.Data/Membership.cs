@@ -28,5 +28,7 @@ namespace AverageJoes.Data
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
+        //I am making changes okay github
+
     }
 }
