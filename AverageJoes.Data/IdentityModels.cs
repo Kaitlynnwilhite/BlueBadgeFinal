@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using System.Data.Entity; 
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace BlueBadgeFinal.Models
+namespace BlueBadgeFinal.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -33,7 +33,7 @@ namespace BlueBadgeFinal.Models
             return new ApplicationDbContext();
         }
         public DbSet<Membership> Memberships { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> UsersInfo { get; set; }
         public DbSet<Activity> Activities { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
