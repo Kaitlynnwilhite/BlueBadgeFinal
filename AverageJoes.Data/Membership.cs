@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AverageJoes.Data
 {
-    public class Membership
+    public class Memberships
     {
     }
 }

@@ -20,7 +20,7 @@ namespace AverageJoes.Data
         [Required]
         public bool IsSignedUp { get; set; }
         [Required]
-        public Guid OwnerId { get; set; }
+        public Guid OwnerID { get; set; }
         
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
