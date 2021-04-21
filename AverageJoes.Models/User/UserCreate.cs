@@ -16,7 +16,7 @@ namespace AverageJoes.Models.User
         [Required]
         public string Address { get; set; }
         [Required]
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
         [Required]
         public string Email { get; set; }
         [Required]

@@ -41,15 +41,6 @@ namespace BlueBadgeFinal.Controllers
                 return InternalServerError();
             return Ok();
         }
-        public IHttpActionResult Delete(int id)
-        {
-            var service = CreateUserService();
-
-            if (!service.DeleteUsers(id))
-                return InternalServerError();
-
-            return Ok();
-        }
         public IHttpActionResult Put(UserEdit users)
         {
             if (!ModelState.IsValid)
@@ -58,6 +49,15 @@ namespace BlueBadgeFinal.Controllers
             var service = CreateUserService();
 
             if (!service.UpdateUsers(users))
+                return InternalServerError();
+
+            return Ok();
+        }
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateUserService();
+
+            if (!service.DeleteUsers(id))
                 return InternalServerError();
 
             return Ok();
