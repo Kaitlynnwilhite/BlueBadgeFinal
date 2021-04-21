@@ -8,5 +8,10 @@ namespace AverageJoes.Models.User
 {
     public class UserListItem
     {
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public long PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public int CreditCard { get; set; }
     }
 }
