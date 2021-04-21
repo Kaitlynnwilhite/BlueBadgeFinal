@@ -20,7 +20,11 @@ namespace AverageJoes.Data
         public Guid OwnerID { get; set; }
         [Required]
 
-        public MembershipType membership { get; set; }
+        public MembershipType MembershipTypes { get; set; }
+
+        [Required]
+
+        public string Notes { get; set; }
 
         [Required]
 
@@ -28,7 +32,6 @@ namespace AverageJoes.Data
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        //I am making changes okay github
 
     }
 }
