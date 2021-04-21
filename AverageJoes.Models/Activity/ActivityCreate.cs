@@ -11,7 +11,7 @@ namespace AverageJoes.Models.Activity
 {
     public class ActivityCreate
     {
-        [Key]
+        
         [Required]
         public int ID { get; set; }
         [Required]

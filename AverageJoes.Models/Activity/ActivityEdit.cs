@@ -9,7 +9,7 @@ namespace AverageJoes.Models.Activity
 {
     public class ActivityEdit
     {
-        [Key]
+        
         
         public int ID { get; set; }
         
