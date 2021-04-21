@@ -24,6 +24,6 @@ namespace AverageJoes.Data
         
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
-        public virtual User User { get; set; }
+        public virtual Users User { get; set; }
     }
 }
