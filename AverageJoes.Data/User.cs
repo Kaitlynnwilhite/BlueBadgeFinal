@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AverageJoes.Data
 {
-    public class User
+    public class Users
     {
         [Key]
         public int ID { get; set; }
