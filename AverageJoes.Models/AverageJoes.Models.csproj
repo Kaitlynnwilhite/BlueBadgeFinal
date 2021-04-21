@@ -72,5 +72,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AverageJoes.Data\AverageJoes.Data.csproj">
+      <Project>{B14A1873-CED4-4A00-A91B-75E7F96FBAD4}</Project>
+      <Name>AverageJoes.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
