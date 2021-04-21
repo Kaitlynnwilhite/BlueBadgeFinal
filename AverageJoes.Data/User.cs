@@ -24,7 +24,7 @@ namespace AverageJoes.Data
         public string Email { get; set; }
         [Required]
         public int CreditCard { get; set; }
-        [ForeignKey(nameof(Memberships))]
+        [ForeignKey(nameof(Membership))]
         public int MembershipID { get; set; }
         public virtual Memberships Membership { get; set; }
     }

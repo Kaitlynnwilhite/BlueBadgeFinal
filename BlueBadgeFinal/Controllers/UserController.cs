@@ -10,5 +10,6 @@ namespace BlueBadgeFinal.Controllers
     [Authorize]
     public class UserController : ApiController
     {
+
     }
 }
