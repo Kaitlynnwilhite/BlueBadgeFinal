@@ -33,7 +33,7 @@ namespace BlueBadgeFinal.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Membership> Memberships { get; set; }
+        public DbSet<Memberships> Memberships { get; set; }
         public DbSet<User> UsersInfo { get; set; }
         public DbSet<Activity> Activities { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
