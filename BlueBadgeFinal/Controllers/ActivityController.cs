@@ -15,8 +15,8 @@ namespace BlueBadgeFinal.Controllers
     {
         private ActivityService CreateActivityService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var activityService = new ActivityService(userID);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var activityService = new ActivityService(userId);
                 return activityService;
         }
         public IHttpActionResult Get()
