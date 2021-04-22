@@ -72,8 +72,8 @@ namespace AverageJoes.Services
                 entity.PhoneNumber = model.PhoneNumber;
                 entity.Email = model.Email;
                 entity.CreditCard = model.CreditCard;
-                //entity.MembershipID = entity.MembershipID;
-                //entity.Membership = entity.Membership;
+                //entity.MembershipID = model.MembershipID;
+                //entity.Membership = model.Membership;
 
                 return ctx.SaveChanges() == 1;
             }
