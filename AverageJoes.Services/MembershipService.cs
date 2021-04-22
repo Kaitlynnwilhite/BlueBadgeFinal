@@ -51,6 +51,7 @@ namespace AverageJoes.Services
 
                                     ID = e.ID,
                                     membership = e.MembershipTypes,
+                                    Notes = e.Notes,
                                     CreatedUtc = e.CreatedUtc
                                 }
                         );
