@@ -66,13 +66,14 @@ namespace AverageJoes.Services
                 var entity =
                     ctx
                     .UsersInfo
-                    .Single(e => e.Name == model.Name && e.OwnerID == _ownerID);
+                    .Single(e => e.ID == model.ID && e.OwnerID == _ownerID);
+                entity.Name = model.Name;
                 entity.Address = model.Address;
                 entity.PhoneNumber = model.PhoneNumber;
-                entity.Email = entity.Email;
-                entity.CreditCard = entity.CreditCard;
-                entity.MembershipID = entity.MembershipID;
-                entity.Membership = entity.Membership;
+                entity.Email = model.Email;
+                entity.CreditCard = model.CreditCard;
+                //entity.MembershipID = entity.MembershipID;
+                //entity.Membership = entity.Membership;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -89,6 +90,7 @@ namespace AverageJoes.Services
                         e =>
                         new UserListItem
                         {
+                            ID = e.ID,
                             Name = e.Name,
                             Address = e.Address,
                             PhoneNumber = e.PhoneNumber,

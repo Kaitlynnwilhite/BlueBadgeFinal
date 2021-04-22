@@ -8,10 +8,11 @@ namespace AverageJoes.Models.User
 {
     public class UserEdit
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public long PhoneNumber { get; set; }
         public string Email { get; set; }
-        public int CreditCard { get; set; }
+        public long CreditCard { get; set; }
     }
 }
