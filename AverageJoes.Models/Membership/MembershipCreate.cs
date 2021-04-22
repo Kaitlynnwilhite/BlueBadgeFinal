@@ -12,8 +12,8 @@ namespace AverageJoes.Models.Membership
     public class MembershipCreate
     {
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
+        //[MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
+        //[MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public MembershipType MembershipTypes { get; set; }
 
         [MaxLength(8000)]
