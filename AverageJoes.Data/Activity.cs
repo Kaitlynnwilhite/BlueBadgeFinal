@@ -23,7 +23,7 @@ namespace AverageJoes.Data
         public Guid OwnerID { get; set; }
         
         [ForeignKey(nameof(User))]
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public virtual Users User { get; set; }
     }
 }

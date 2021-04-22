@@ -24,8 +24,7 @@ namespace AverageJoes.Services
                     OwnerID = _ownerID,
                     Name = model.Name,
                     Descripton = model.Descripton,
-                    UserID = model.UserID,
-                    User = model.User
+                    UserID = (model.UserID != null) ? model.UserID : null
                 };
             using (var ctx = new ApplicationDbContext())
             {

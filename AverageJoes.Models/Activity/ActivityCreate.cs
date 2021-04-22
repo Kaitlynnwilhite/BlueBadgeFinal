@@ -21,7 +21,7 @@ namespace AverageJoes.Models.Activity
         //[Required]
         //public Guid OwnerID { get; set; }
         [ForeignKey(nameof(Users))]
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public virtual Users User { get; set; }
     }
 }
