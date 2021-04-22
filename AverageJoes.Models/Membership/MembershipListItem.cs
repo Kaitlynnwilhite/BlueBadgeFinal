@@ -13,6 +13,8 @@ namespace AverageJoes.Models.Membership
         public int ID { get; set; }
         public MembershipType membership { get; set; }
 
+        public string Notes { get;set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
