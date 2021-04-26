@@ -29,7 +29,8 @@ namespace AverageJoes.Services
                     Email = model.Email,
                     CreditCard = model.CreditCard,
                     MembershipID = model.MembershipID,
-                    Membership = model.Membership
+                    Membership = model.Membership,
+                    ActivityID = (model.ActivityID != null) ? model.ActivityID : null
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,7 +55,8 @@ namespace AverageJoes.Services
                         PhoneNumber = entity.PhoneNumber,
                         Email = entity.Email,
                         CreditCard = entity.CreditCard,
-                        Membership = entity.Membership
+                        Membership = entity.Membership,
+                        Activity = entity.Activities
                     };
             }
         }
@@ -95,7 +97,8 @@ namespace AverageJoes.Services
                             PhoneNumber = e.PhoneNumber,
                             Email = e.Email,
                             CreditCard = e.CreditCard,
-                            Membership = e.Membership
+                            Membership = e.Membership,
+                            Activity = e.Activities
                         });
                 return query.ToArray();
             }
