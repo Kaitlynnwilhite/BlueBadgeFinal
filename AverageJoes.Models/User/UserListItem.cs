@@ -15,7 +15,6 @@ namespace AverageJoes.Models.User
         public long PhoneNumber { get; set; }
         public string Email { get; set; }
         public long CreditCard { get; set; }
-        public int MembershipID { get; set; }
         public virtual Memberships Membership { get; set; }
     }
 }
