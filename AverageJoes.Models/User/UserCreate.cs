@@ -26,6 +26,6 @@ namespace AverageJoes.Models.User
         public virtual Memberships Membership { get; set; }
         [ForeignKey(nameof(Activities))]
         public int? ActivityID { get; set; }
-        public virtual Data.Activity Activities { get; set; }
+        public virtual ICollection<Data.Activity> Activities { get; set; }
     }
 }
