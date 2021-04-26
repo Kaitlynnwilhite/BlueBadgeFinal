@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using System.Data.Entity; 
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -35,7 +35,7 @@ namespace BlueBadgeFinal.Data
         }
         public DbSet<Memberships> Memberships { get; set; }
         public DbSet<Users> UsersInfo { get; set; }
-        public DbSet<Activity> Activities { get; set; }
+       public DbSet<Activity> Activities { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

@@ -18,7 +18,7 @@ namespace AverageJoes.Models.Activity
         public string Name { get; set; }
         [Required]
         public string Descripton { get; set; }
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(Users))]
         public int? UserID { get; set; }
         public virtual Users User { get; set; }
     }
