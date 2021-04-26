@@ -18,8 +18,6 @@ namespace AverageJoes.Data
         [Required]
         public string Descripton { get; set; }
         [Required]
-        public bool IsSignedUp { get; set; }
-        [Required]
         public Guid OwnerID { get; set; }
         
         [ForeignKey(nameof(User))]

@@ -47,7 +47,6 @@ namespace AverageJoes.Services
                                     ID = e.ID,
                                     Name = e.Name,
                                     Descripton = e.Descripton,
-                                    IsSignedUp = e.IsSignedUp,
                                 }
                         );
                 return query.ToArray();
