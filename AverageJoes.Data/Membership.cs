@@ -11,7 +11,7 @@ namespace AverageJoes.Data
     {
         public enum MembershipType
         {
-            individual, family, seniorCitizen, veteran, student
+            individual =1, family, seniorCitizen, veteran, student
         }
         [Key]
         public int ID { get; set; }
