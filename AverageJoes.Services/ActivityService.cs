@@ -24,7 +24,7 @@ namespace AverageJoes.Services
                     OwnerID = _ownerID,
                     Name = model.Name,
                     Descripton = model.Descripton,
-                    UserID = (model.UserID != null) ? model.UserID : null
+                    //UserID = (model.UserID != null) ? model.UserID : null
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -66,8 +66,8 @@ namespace AverageJoes.Services
                         ID = entity.ID,
                         Name = entity.Name,
                         Descripton = entity.Descripton,
-                        UserID = entity.UserID,
-                        User = entity.User
+                        //UserID = entity.UserID,
+                        //User = entity.User
                     };
             }
         }

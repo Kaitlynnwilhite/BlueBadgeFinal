@@ -17,7 +17,7 @@ namespace BlueBadgeFinal.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var activityService = new ActivityService(userId);
-                return activityService;
+            return activityService;
         }
         public IHttpActionResult Get()
         {
@@ -38,7 +38,7 @@ namespace BlueBadgeFinal.Controllers
         {
             ActivityService activityService = CreateActivityService();
             var activity = activityService.GetActivitiesByID(id);
-                return Ok(activity);
+            return Ok(activity);
         }
         public IHttpActionResult Put(ActivityEdit activity)
         {

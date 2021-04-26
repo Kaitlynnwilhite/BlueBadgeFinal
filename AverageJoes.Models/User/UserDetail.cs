@@ -17,6 +17,6 @@ namespace AverageJoes.Models.User
         public string Email { get; set; }
         public long CreditCard { get; set; }
         public virtual Memberships Membership { get; set; }
-        public virtual Data.Activity Activity { get; set; }
+        public virtual ICollection<Data.Activity> Activity { get; set; }
     }
 }

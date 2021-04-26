@@ -7,13 +7,13 @@ namespace AverageJoes.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class SecondEmptyMigration : IMigrationMetadata
+    public sealed partial class Init2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SecondEmptyMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104221937393_SecondEmptyMigration"; }
+            get { return "202104262335377_Init2"; }
         }
         
         string IMigrationMetadata.Source

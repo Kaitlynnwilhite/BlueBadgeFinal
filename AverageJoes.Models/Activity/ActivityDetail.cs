@@ -18,8 +18,8 @@ namespace AverageJoes.Models.Activity
         
         public string Descripton { get; set; }
 
-        public int? UserID { get; set; }
-        public virtual Users User { get; set; }
+        //public int? UserID { get; set; }
+        //public virtual Users User { get; set; }
     }
 }
 

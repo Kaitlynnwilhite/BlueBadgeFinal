@@ -3,42 +3,10 @@ namespace AverageJoes.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migration1 : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Activity",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                        Descripton = c.String(nullable: false),
-                        IsSignedUp = c.Boolean(nullable: false),
-                        OwnerID = c.Guid(nullable: false),
-                        UserID = c.Int(),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Users", t => t.UserID)
-                .Index(t => t.UserID);
-            
-            CreateTable(
-                "dbo.Users",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        OwnerID = c.Guid(nullable: false),
-                        Address = c.String(nullable: false),
-                        Name = c.String(nullable: false),
-                        PhoneNumber = c.Long(nullable: false),
-                        Email = c.String(nullable: false),
-                        CreditCard = c.Long(nullable: false),
-                        MembershipID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Memberships", t => t.MembershipID, cascadeDelete: true)
-                .Index(t => t.MembershipID);
-            
             CreateTable(
                 "dbo.Memberships",
                 c => new
@@ -122,30 +90,44 @@ namespace AverageJoes.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.ApplicationUser_Id);
             
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        OwnerID = c.Guid(nullable: false),
+                        Address = c.String(nullable: false),
+                        Name = c.String(nullable: false),
+                        PhoneNumber = c.Long(nullable: false),
+                        Email = c.String(nullable: false),
+                        CreditCard = c.Long(nullable: false),
+                        MembershipID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Memberships", t => t.MembershipID, cascadeDelete: true)
+                .Index(t => t.MembershipID);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Users", "MembershipID", "dbo.Memberships");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Activity", "UserID", "dbo.Users");
-            DropForeignKey("dbo.Users", "MembershipID", "dbo.Memberships");
+            DropIndex("dbo.Users", new[] { "MembershipID" });
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Users", new[] { "MembershipID" });
-            DropIndex("dbo.Activity", new[] { "UserID" });
+            DropTable("dbo.Users");
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.Memberships");
-            DropTable("dbo.Users");
-            DropTable("dbo.Activity");
         }
     }
 }
