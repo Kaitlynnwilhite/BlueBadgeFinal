@@ -87,22 +87,12 @@
     <Compile Include="Activity.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Membership.cs" />
-    <Compile Include="Migrations\202104252354443_Init.cs" />
-    <Compile Include="Migrations\202104252354443_Init.Designer.cs">
-      <DependentUpon>202104252354443_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104252354443_Init.resx">
-      <DependentUpon>202104252354443_Init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
