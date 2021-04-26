@@ -21,8 +21,8 @@ namespace AverageJoes.Models.User
         public string Email { get; set; }
         [Required]
         public long CreditCard { get; set; }
-        //[ForeignKey(nameof(Memberships))]
-        //public int MembershipID { get; set; }
-        //public virtual Memberships Membership { get; set; }
+        [ForeignKey(nameof(Memberships))]
+        public int MembershipID { get; set; }
+        public virtual Memberships Membership { get; set; }
     }
 }
