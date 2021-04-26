@@ -11,21 +11,20 @@ namespace AverageJoes.Services
 {
     public class ActivityService
     {
-        private readonly Guid _userId;
-        public ActivityService(Guid userId)
+        private readonly Guid _ownerID;
+        public ActivityService(Guid ownerID)
         {
-            _userId = userId;
+            _ownerID = ownerID;
         }
         public bool CreateActivity(ActivityCreate model)
         {
             var entity =
                 new Activity()
                 {
-                    OwnerID = _userId,
+                    OwnerID = _ownerID,
                     Name = model.Name,
                     Descripton = model.Descripton,
-                    UserID = model.UserID,
-                    User = model.User
+                    UserID = (model.UserID != null) ? model.UserID : null
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -40,7 +39,7 @@ namespace AverageJoes.Services
                 var query =
                     ctx
                         .Activities
-                        .Where(e => e.OwnerID == _userId)
+                        .Where(e => e.OwnerID == _ownerID)
                         .Select(
                             e =>
                                 new ActivityListItem
@@ -48,7 +47,6 @@ namespace AverageJoes.Services
                                     ID = e.ID,
                                     Name = e.Name,
                                     Descripton = e.Descripton,
-                                    IsSignedUp = e.IsSignedUp,
                                 }
                         );
                 return query.ToArray();
@@ -61,7 +59,7 @@ namespace AverageJoes.Services
                 var entity =
                     ctx
                         .Activities
-                        .Single(e => e.ID == id && e.OwnerID == _userId);
+                        .Single(e => e.ID == id && e.OwnerID == _ownerID);
                 return
                     new ActivityDetail
                     {
@@ -80,7 +78,7 @@ namespace AverageJoes.Services
                 var entity =
                     ctx
                         .Activities
-                        .Single(e => e.ID == model.ID && e.OwnerID == _userId);
+                        .Single(e => e.ID == model.ID && e.OwnerID == _ownerID);
                 entity.ID = model.ID;
                 entity.Name = model.Name;
                 entity.Descripton = model.Descripton;
@@ -95,7 +93,7 @@ namespace AverageJoes.Services
                 var entity =
                     ctx
                         .Activities
-                        .Single(e => e.ID == id && e.OwnerID == _userId);
+                        .Single(e => e.ID == id && e.OwnerID == _ownerID);
                 ctx.Activities.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

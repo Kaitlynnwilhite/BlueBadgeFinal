@@ -16,9 +16,7 @@ namespace AverageJoes.Models.Activity
         public string Name { get; set; }
        
         public string Descripton { get; set; }
-        
-        public bool IsSignedUp { get; set; }
-      
+    
     }
 }
 
