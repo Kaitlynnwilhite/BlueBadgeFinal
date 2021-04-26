@@ -28,8 +28,8 @@ namespace AverageJoes.Services
                     PhoneNumber = model.PhoneNumber,
                     Email = model.Email,
                     CreditCard = model.CreditCard,
-                    MembershipID = model.MembershipID,
-                    Membership = model.Membership
+                  //  MembershipID = model.MembershipID,
+                  //  Membership = model.Membership
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,8 +54,8 @@ namespace AverageJoes.Services
                         PhoneNumber = entity.PhoneNumber,
                         Email = entity.Email,
                         CreditCard = entity.CreditCard,
-                        MembershipID = entity.MembershipID,
-                        Membership = entity.Membership
+                     //   MembershipID = entity.MembershipID,
+                     //   Membership = entity.Membership
                     };
             }
         }
@@ -95,7 +95,9 @@ namespace AverageJoes.Services
                             Address = e.Address,
                             PhoneNumber = e.PhoneNumber,
                             Email = e.Email,
-                            CreditCard = e.CreditCard
+                            CreditCard = e.CreditCard,
+                            MembershipID = e.MembershipID,
+                            Membership = e.Membership
                         });
                 return query.ToArray();
             }
