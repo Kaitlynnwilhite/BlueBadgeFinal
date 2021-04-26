@@ -95,7 +95,9 @@ namespace AverageJoes.Services
                             Address = e.Address,
                             PhoneNumber = e.PhoneNumber,
                             Email = e.Email,
-                            CreditCard = e.CreditCard
+                            CreditCard = e.CreditCard,
+                            MembershipID = e.MembershipID,
+                            Membership = e.Membership
                         });
                 return query.ToArray();
             }
