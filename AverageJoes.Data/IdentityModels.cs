@@ -35,7 +35,7 @@ namespace BlueBadgeFinal.Data
         }
         public DbSet<Memberships> Memberships { get; set; }
         public DbSet<Users> UsersInfo { get; set; }
-        public DbSet<Activity> Activities { get; set; }
+       public DbSet<Activity> Activities { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
