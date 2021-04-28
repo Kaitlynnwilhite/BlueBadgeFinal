@@ -3,10 +3,23 @@ namespace AverageJoes.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class pleasework : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Activity",
+                c => new
+                {
+                    ID = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Description = c.String(),
+                    OwnerID = c.Guid(nullable: false),
+
+                })
+                .PrimaryKey(t => t.ID);
+              
+            
             CreateTable(
                 "dbo.Memberships",
                 c => new
@@ -112,6 +125,7 @@ namespace AverageJoes.Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Users", "MembershipID", "dbo.Memberships");
+            DropForeignKey("dbo.Activity", "Users_ID", "dbo.Users");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
@@ -121,6 +135,7 @@ namespace AverageJoes.Data.Migrations
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Activity", new[] { "Users_ID" });
             DropTable("dbo.Users");
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
@@ -128,6 +143,7 @@ namespace AverageJoes.Data.Migrations
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.Memberships");
+            DropTable("dbo.Activity");
         }
     }
 }

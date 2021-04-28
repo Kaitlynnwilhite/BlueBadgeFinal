@@ -85,19 +85,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity.cs" />
+    <Compile Include="Enrollment.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Membership.cs" />
-    <Compile Include="Migrations\202104262334150_Init.cs" />
-    <Compile Include="Migrations\202104262334150_Init.Designer.cs">
-      <DependentUpon>202104262334150_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202104271404274_pleasework.cs" />
+    <Compile Include="Migrations\202104271404274_pleasework.Designer.cs">
+      <DependentUpon>202104271404274_pleasework.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104262335377_Init2.cs" />
-    <Compile Include="Migrations\202104262335377_Init2.Designer.cs">
-      <DependentUpon>202104262335377_Init2.cs</DependentUpon>
+    <Compile Include="Migrations\202104281507092_EnrollmentStuff.cs" />
+    <Compile Include="Migrations\202104281507092_EnrollmentStuff.Designer.cs">
+      <DependentUpon>202104281507092_EnrollmentStuff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104262338157_Init3.cs" />
-    <Compile Include="Migrations\202104262338157_Init3.Designer.cs">
-      <DependentUpon>202104262338157_Init3.cs</DependentUpon>
+    <Compile Include="Migrations\202104281550223_enrollmentUpdate.cs" />
+    <Compile Include="Migrations\202104281550223_enrollmentUpdate.Designer.cs">
+      <DependentUpon>202104281550223_enrollmentUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104282006020_addMembershipIDTOUSer.cs" />
+    <Compile Include="Migrations\202104282006020_addMembershipIDTOUSer.Designer.cs">
+      <DependentUpon>202104282006020_addMembershipIDTOUSer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,14 +113,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104262334150_Init.resx">
-      <DependentUpon>202104262334150_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104271404274_pleasework.resx">
+      <DependentUpon>202104271404274_pleasework.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104262335377_Init2.resx">
-      <DependentUpon>202104262335377_Init2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104281507092_EnrollmentStuff.resx">
+      <DependentUpon>202104281507092_EnrollmentStuff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104262338157_Init3.resx">
-      <DependentUpon>202104262338157_Init3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104281550223_enrollmentUpdate.resx">
+      <DependentUpon>202104281550223_enrollmentUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104282006020_addMembershipIDTOUSer.resx">
+      <DependentUpon>202104282006020_addMembershipIDTOUSer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

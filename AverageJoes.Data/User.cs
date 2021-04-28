@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AverageJoes.Data.Memberships;
 
 namespace AverageJoes.Data
 {
@@ -28,7 +29,8 @@ namespace AverageJoes.Data
         [ForeignKey(nameof(Membership))]
         public int MembershipID { get; set; }
         public virtual Memberships Membership { get; set; }
-       
-       public virtual ICollection<Activity> Activities { get; set; }
+        public MembershipType MembershipTypes { get; set; }
+
+        public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>(); 
     }
 }

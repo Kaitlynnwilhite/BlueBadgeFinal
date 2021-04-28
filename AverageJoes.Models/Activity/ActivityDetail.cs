@@ -1,4 +1,5 @@
 ﻿using AverageJoes.Data;
+using AverageJoes.Models.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,10 +17,8 @@ namespace AverageJoes.Models.Activity
        
         public string Name { get; set; }
         
-        public string Descripton { get; set; }
-
-        //public int? UserID { get; set; }
-        //public virtual Users User { get; set; }
+        public string Description { get; set; }
+        public virtual ICollection<UserListItem> Enrollments { get; set; } = new List<UserListItem>();
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using AverageJoes.Data;
 using AverageJoes.Models.Activity;
+using AverageJoes.Models.User;
 using BlueBadgeFinal.Data;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,7 @@ namespace AverageJoes.Services
                 {
                     OwnerID = _ownerID,
                     Name = model.Name,
-                    Descripton = model.Descripton,
-                    //UserID = (model.UserID != null) ? model.UserID : null
+                    Description = model.Description,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -46,7 +46,7 @@ namespace AverageJoes.Services
                                 {
                                     ID = e.ID,
                                     Name = e.Name,
-                                    Descripton = e.Descripton,
+                                    Description = e.Description,
                                 }
                         );
                 return query.ToArray();
@@ -60,14 +60,24 @@ namespace AverageJoes.Services
                     ctx
                         .Activities
                         .Single(e => e.ID == id && e.OwnerID == _ownerID);
+                List<UserListItem> usersActivities = new List<UserListItem>();
+                foreach(var user in entity.Enrollments)
+                {
+                    var userListItem = new UserListItem()
+                    {
+                        ID = user.Users.ID,
+                        Name = user.Users.Name
+                    };
+                    usersActivities.Add(userListItem);
+                    
+                }
                 return
                     new ActivityDetail
                     {
                         ID = entity.ID,
                         Name = entity.Name,
-                        Descripton = entity.Descripton,
-                        //UserID = entity.UserID,
-                        //User = entity.User
+                        Description = entity.Description,
+                        Enrollments = usersActivities
                     };
             }
         }
@@ -81,7 +91,7 @@ namespace AverageJoes.Services
                         .Single(e => e.ID == model.ID && e.OwnerID == _ownerID);
                 entity.ID = model.ID;
                 entity.Name = model.Name;
-                entity.Descripton = model.Descripton;
+                entity.Description = model.Description;
 
                 return ctx.SaveChanges() == 1;
             }

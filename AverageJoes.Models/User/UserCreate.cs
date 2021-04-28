@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AverageJoes.Data.Memberships;
 
 namespace AverageJoes.Models.User
 {
@@ -23,5 +24,6 @@ namespace AverageJoes.Models.User
         public long CreditCard { get; set; }
         [ForeignKey(nameof(Memberships))]
         public int MembershipID { get; set; }
+        public MembershipType MembershipTypes { get; set; }
     }
 }

@@ -12,15 +12,10 @@ namespace AverageJoes.Models.Activity
     public class ActivityCreate
     {
         
-        [Required]
         public int ID { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
-        public string Descripton { get; set; }
-        //[ForeignKey(nameof(Users))]
-        //public int? UserID { get; set; }
-        //public virtual Users User { get; set; }
+        
+        public string Description { get; set; }
     }
 }
 

@@ -7,13 +7,13 @@ namespace AverageJoes.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class addMembershipIDTOUSer : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addMembershipIDTOUSer));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104262334150_Init"; }
+            get { return "202104282006020_addMembershipIDTOUSer"; }
         }
         
         string IMigrationMetadata.Source

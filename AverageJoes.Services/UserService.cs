@@ -1,4 +1,5 @@
 ﻿using AverageJoes.Data;
+using AverageJoes.Models.Activity;
 using AverageJoes.Models.User;
 using BlueBadgeFinal.Data;
 using System;
@@ -29,6 +30,7 @@ namespace AverageJoes.Services
                     Email = model.Email,
                     CreditCard = model.CreditCard,
                     MembershipID = model.MembershipID,
+                    MembershipTypes = model.MembershipTypes
                    
                 };
             using (var ctx = new ApplicationDbContext())
@@ -46,6 +48,17 @@ namespace AverageJoes.Services
                     ctx
                     .UsersInfo
                     .Single(e => e.ID == id && e.OwnerID == _ownerID);
+                List<ActivityListItem> userEnrollments = new List<ActivityListItem>();
+                foreach(var activity in entity.Enrollments)
+                {
+                    var activityListItem = new ActivityListItem()
+                    {
+                        ID = activity.Activities.ID,
+                        Name = activity.Activities.Name,
+                        Description = activity.Activities.Description
+                    };
+                    userEnrollments.Add(activityListItem);
+                }
                 return
                     new UserDetail
                     {
@@ -55,7 +68,7 @@ namespace AverageJoes.Services
                         Email = entity.Email,
                         CreditCard = entity.CreditCard,
                         Membership = entity.Membership,
-                   //     Activity = entity.Activities
+                        Activity = userEnrollments
                     };
             }
         }
@@ -72,8 +85,7 @@ namespace AverageJoes.Services
                 entity.PhoneNumber = model.PhoneNumber;
                 entity.Email = model.Email;
                 entity.CreditCard = model.CreditCard;
-                //entity.MembershipID = model.MembershipID;
-                //entity.Membership = model.Membership;
+                entity.Enrollments = model.Enrollments;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -91,13 +103,9 @@ namespace AverageJoes.Services
                         new UserListItem
                         {
                             ID = e.ID,
+                            MembershipID = e.MembershipID,
+                            MembershipTypes = e.MembershipTypes,
                             Name = e.Name,
-                            Address = e.Address,
-                            PhoneNumber = e.PhoneNumber,
-                            Email = e.Email,
-                            CreditCard = e.CreditCard,
-                            Membership = e.Membership,
-                         //   Activity = e.Activities
                         });
                 return query.ToArray();
             }

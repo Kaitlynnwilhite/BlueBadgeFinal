@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AverageJoes.Data.Memberships;
 
 namespace AverageJoes.Models.User
 {
@@ -11,11 +12,7 @@ namespace AverageJoes.Models.User
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
-        public long PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public long CreditCard { get; set; }
-        public virtual Memberships Membership { get; set; }
-        public virtual ICollection<Data.Activity> Activity { get; set; }
+        public int MembershipID { get; set; }
+        public MembershipType MembershipTypes { get; set; }
     }
 }

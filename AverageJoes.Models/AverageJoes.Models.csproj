@@ -58,6 +58,10 @@
     <Compile Include="Activity\ActivityDetail.cs" />
     <Compile Include="Activity\ActivityEdit.cs" />
     <Compile Include="Activity\ActivityListItem.cs" />
+    <Compile Include="Enrollment\EnrollmentCreate.cs" />
+    <Compile Include="Enrollment\EnrollmentDetail.cs" />
+    <Compile Include="Enrollment\EnrollmentEdit.cs" />
+    <Compile Include="Enrollment\EnrollmentListItem.cs" />
     <Compile Include="Membership\MembershipCreate.cs" />
     <Compile Include="Membership\MembershipDetail.cs" />
     <Compile Include="Membership\MembershipEdit.cs" />
