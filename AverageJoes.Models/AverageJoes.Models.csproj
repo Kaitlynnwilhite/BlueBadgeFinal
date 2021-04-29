@@ -58,6 +58,10 @@
     <Compile Include="Activity\ActivityDetail.cs" />
     <Compile Include="Activity\ActivityEdit.cs" />
     <Compile Include="Activity\ActivityListItem.cs" />
+    <Compile Include="Enrollment\EnrollmentCreate.cs" />
+    <Compile Include="Enrollment\EnrollmentDetail.cs" />
+    <Compile Include="Enrollment\EnrollmentEdit.cs" />
+    <Compile Include="Enrollment\EnrollmentListItem.cs" />
     <Compile Include="Membership\MembershipCreate.cs" />
     <Compile Include="Membership\MembershipDetail.cs" />
     <Compile Include="Membership\MembershipEdit.cs" />
@@ -71,6 +75,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AverageJoes.Data\AverageJoes.Data.csproj">
+      <Project>{B14A1873-CED4-4A00-A91B-75E7F96FBAD4}</Project>
+      <Name>AverageJoes.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

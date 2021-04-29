@@ -8,17 +8,15 @@ using System.Threading.Tasks;
 
 namespace AverageJoes.Data
 {
-    public class Activity
+    public class Enrollment
     {
         [Key]
-        
         public int ID { get; set; }
-        
-        public string Name { get; set; }
-        
-        public string Description { get; set; }
-        
-        public Guid OwnerID { get; set; }
-        public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+        [ForeignKey(nameof(Users))]
+        public int UserID { get; set; }
+        public virtual Users Users { get; set; } 
+        [ForeignKey(nameof(Activities))]
+        public int ActivityID { get; set; }
+        public virtual Activity Activities { get; set; } 
     }
 }

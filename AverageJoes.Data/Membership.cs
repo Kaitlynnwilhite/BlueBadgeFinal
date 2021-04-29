@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AverageJoes.Data
 {
-    public class Membership
+    public class Memberships
     {
         public enum MembershipType
         {
-            individual, family, seniorCitizen, veteran, student
+           Annual =1, SemiAnnual, Quarterly, Monthly, Weekly 
         }
         [Key]
         public int ID { get; set; }
@@ -20,13 +20,18 @@ namespace AverageJoes.Data
         public Guid OwnerID { get; set; }
         [Required]
 
-        public MembershipType membership { get; set; }
+        public MembershipType MembershipTypes { get; set; }
+
+        [Required]
+
+        public string Notes { get; set; }
 
         [Required]
 
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
+
 
     }
 }
